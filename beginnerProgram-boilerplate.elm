@@ -32,7 +32,8 @@ update msg model =
 -- view
 view model =
     div []
-    [ input [onInput SomeUpdate] [text "Do the string thing"]
+    [ input [onInput SomeUpdate, placeholder "Do the string thing"] []
+    , button [onClick (SomeUpdate "param")] [text "Do the string thing with param"]
     , button [onClick OtherUpdate] [text "Do the list thing"]
     , p [] [text (toString model.list)]
     , p [] [text model.str]
